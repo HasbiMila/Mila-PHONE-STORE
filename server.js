@@ -212,4 +212,6 @@ app.put("/api/admin/settings",admin,(req,res)=>{
 app.get("/admin",(req,res)=>res.sendFile(path.join(__dirname,"public/admin.html")));
 app.get("*",(req,res)=>res.sendFile(path.join(__dirname,"public/index.html")));
 
-app.listen(PORT,()=>console.log(`MILA PHONE STORE running on http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`MILA PHONE STORE running on port ${PORT}`);
+});
